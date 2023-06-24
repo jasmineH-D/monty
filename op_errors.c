@@ -1,4 +1,4 @@
-#include "monty"
+#include "monty.h"
 
 /**
  * addErr - error case for addOP funct
@@ -10,7 +10,7 @@
 void addErr(stack_t **stack, unsigned int numL)
 {
 	fprintf(stderr, "L%d: can not addition, stack is too short \n", numL);
-	freeStack(*stack);
+	freesStack(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -24,7 +24,7 @@ void addErr(stack_t **stack, unsigned int numL)
 void pushErr(stack_t **stack, unsigned int numL)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", numL);
-	freeStack(*stack);
+	freesStack(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -38,7 +38,7 @@ void pushErr(stack_t **stack, unsigned int numL)
 void pintErr(stack_t **stack, unsigned int numL)
 {
 	fprintf(stderr, "L%d: can not pint, stack empty\n", numL);
-	freeStack(*stack);
+	freesStack(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -52,7 +52,7 @@ void pintErr(stack_t **stack, unsigned int numL)
 void swapErr(stack_t **stack, unsigned int numL)
 {
 	fprintf(stderr, "L%d: can not swap, stack is too short\n", numL);
-	freeStack(*stack);
+	freesStack(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -67,6 +67,6 @@ void swapErr(stack_t **stack, unsigned int numL)
 void popErr(stack_t **stack, unsigned int numL)
 {
 	fprintf(stderr, "L%d: can not pop from an empty stack\n", numL);
-	freeStack(*stack);
+	freesStack(*stack);
 	exit(EXIT_FAILURE);
 }

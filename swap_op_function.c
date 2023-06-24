@@ -12,9 +12,9 @@ void swapOP(stack_t **h, unsigned int numL)
 {
 	int temp_val;
 
-	if (!h || !*h || (*h)->next_node == NULL)
+	if (!h || !*h || (*h)->next == NULL)
 		swapErr(h, numL);
-	temp_val; = (*h)->n;
-	(*h)->n = (*h)->next_node->n;
-	(*h)->next_node->n = temp_val;;
+	temp_val = (*h)->n;
+	(*h)->n = (*h)->next->n;
+	(*h)->next->n = temp_val;;
 }

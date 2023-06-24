@@ -1,6 +1,7 @@
 #ifndef _MONTY_H
 #define _MONTY_H
 
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -18,9 +19,9 @@
  */
 typedef struct stack_s
 {
-	int data;
-	struct stack_s *prev_node;
-	struct stack_s *next_node;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -34,7 +35,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*func)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /* op functions handler */
 void (*op_functions(char *str))(stack_t **stack, unsigned int numL);
@@ -79,5 +80,4 @@ struct valStack
 	int mode;
 	char *file;
 } valStack;
-
 #endif

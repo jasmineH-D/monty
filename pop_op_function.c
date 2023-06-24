@@ -13,15 +13,15 @@ void popOP(stack_t **h, unsigned int numL)
 	if (!h || !*h)
 		popErr(h, numL);
 	new_node = *h;
-	if (new_node->next_node == NULL)
+	if (new_node->next == NULL)
 	{
 		free(*h);
 		*h = NULL;
 	}
 	else
 	{
-		(*h) = (*h)->next_node;
-		(*h)->prev_node = NULL;
+		(*h) = (*h)->next;
+		(*h)->prev= NULL;
 		free(new_node);
 	}
 }

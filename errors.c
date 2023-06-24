@@ -27,7 +27,7 @@ void fileErr(void)
 void mallocErr(stack_t **stack)
 {
 	fprintf(stderr, "Error: malloc is failed \n");
-	freeStack(*stack);
+	freesStack(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -39,7 +39,7 @@ void mallocErr(stack_t **stack)
  */
 void opcodeErr(stack_t **stack, unsigned int numbr)
 {
-	fprintf(stderr, "L%d: unknown the instruction %s\n", numL, valStack.code);
-	freeStack(*stack);
+	fprintf(stderr, "L%d: unknown the instruction %s\n", numbr, valStack.code);
+	freesStack(*stack);
 	exit(EXIT_FAILURE);
 }

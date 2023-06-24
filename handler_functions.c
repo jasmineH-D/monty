@@ -19,15 +19,15 @@ void (*op_functions(char *str))(stack_t **, unsigned int)
 		{"nop", nopOP},
 		{"#", nopOP},
 		{NULL, NULL}
-		};
+	};
 
-		int y = 0;
+	int y = 0;
 
-		while (instructions[y].opcode)
-		{
-			if (strcmp(instructions[y].opcode, str) == 0)
+	while (instructions[y].opcode)
+	{
+		if (strcmp(instructions[y].opcode, str) == 0)
 			return (instructions[y].f);
-			y++;
-		}
-		return (opcodeError);
+		y++;
+	}
+	return (opcodeErr);
 }

@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 {
 	FILE *fileop;
 	char *buf_L, opbuf[20], buf_VAL[20];
-	ssize_t read_Byt = 0, tokens = 0;
+	ssize_t read_Byt, tokens = 0;
 	size_t bufLen = 0;
 	unsigned int numL = 0;
 	stack_t *stack = NULL;
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	fileop = fopen(valStack.file, "r");
 	if (!fileop)
 		fileErr();
-	while ((readByt = getline(&buf_L, &bufLen, fileop)) != -1)
+	while ((read_Byt = getline(&buf_L, &bufLen, fileop)) != -1)
 	{
 		numL++;
 		tokens = sscanf(buf_L, "%s %s", opbuf, buf_VAL);
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 		memset(buf_VAL, '\0', sizeof(buf_VAL));
 	}
 	free(buf_L);
-	freeStack(stack);
+	freesStack(stack);
 	fclose(fileop);
 	return (0);
 }

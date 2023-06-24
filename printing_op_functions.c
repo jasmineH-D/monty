@@ -17,6 +17,19 @@ void pallOP(stack_t **stack, unsigned int numL)
 	while (new_node)
 	{
 		printf("%d\n", new_node->n);
-		new_node = new_node->next_node;
+		new_node = new_node->next;
 	}
+}
+/**
+ * pintOP - prints the first element
+ * @h: pointer to head of linked list
+ * @numL: line number wherer error occured
+ *
+ * Return: void.
+ */
+void pintOP(stack_t **h, unsigned int numL)
+{
+		if (!h || !*h)
+			pintErr(h, numL);
+		printf("%d\n", (*h)->n);
 }
